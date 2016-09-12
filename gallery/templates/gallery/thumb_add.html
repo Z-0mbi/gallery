@@ -1,0 +1,14 @@
+{% extends "gallery/base.html" %}
+
+{% block title %}<title>Загрузка</title>{% endblock %}
+
+{% block body %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}            
+    {{ form.as_p }}
+    <input type="submit" value="Добавить" >
+</form>
+
+<p><a href="{% url 'gallery' %}">Назад</a></p>
+
+{% endblock %}

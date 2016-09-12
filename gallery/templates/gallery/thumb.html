@@ -1,0 +1,12 @@
+{% extends "gallery/base.html" %}
+
+{% block body %}
+<p><a href="{% url 'add' %}">Загрузить</a></p>
+    <ol>
+    {% for image in img %}
+        <li>
+        <a href="{{ image.image.url }}"><img src="{{image.image.mini_url}}"/>{{ image.comment }}</a>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
